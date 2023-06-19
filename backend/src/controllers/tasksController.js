@@ -10,8 +10,26 @@ const createTask = async (req, res) => {
   return res.status(201).json(createdTask);
 };
 
+const deleteTask = async (req, res) => {
+  const {id} = req.params;
+
+  await tasksModels.deleteTask(id);
+
+  return res.status(204).json();
+};
+
+const updateTask = async (req, res) => {
+  const {id} = req.params;
+
+  await tasksModels.updateTask(id, req.body);
+
+  return res.status(204).json();
+};
+
 
 module.exports = {
   getAlltasks,
-  createTask
+  createTask,
+  deleteTask,
+  updateTask
 };
