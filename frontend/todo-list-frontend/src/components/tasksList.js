@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { useContext, useEffect } from 'react';
+import { fetchContext } from '../contexts/fetchContext';
 
 function TasksList() {
-  const [tasks, setTasks] = useState([]);
+  const { getTasks, tasks } = useContext(fetchContext);
   useEffect(() => {
-    axios('http://localhost:3333/tasks')
-      .then((response) => setTasks(response.data));
-  }, []);
+    getTasks();
+  }, [getTasks, tasks]);
   return (
     <>
       {

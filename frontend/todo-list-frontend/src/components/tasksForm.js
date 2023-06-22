@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import axios from 'axios';
+import { fetchContext } from '../contexts/fetchContext';
 
 function TasksForm() {
+  const { getTasks } = useContext(fetchContext);
   const [task, setTask] = useState('');
   const postTask = (e) => {
     e.preventDefault();
@@ -9,6 +11,7 @@ function TasksForm() {
       title: task,
       status: 'pendente',
     });
+    getTasks();
   };
   return (
     <form onSubmit={ (event) => postTask(event) }>
