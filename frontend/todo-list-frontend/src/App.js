@@ -1,11 +1,11 @@
-import TasksForm from './components/tasksForm';
-import TasksList from './components/tasksList';
+import TasksForm from './components/tasksForm/tasksForm';
+import TasksTable from './components/tasksTable/tasksTable';
 
 function App() {
   return (
     <>
       <TasksForm />
-      <TasksList />
+      <TasksTable />
     </>
   );
 }
