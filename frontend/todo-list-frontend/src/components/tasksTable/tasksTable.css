@@ -1,0 +1,19 @@
+.tasks-table tbody {
+  display: block;
+  max-height: 150px;
+  overflow-y: scroll;
+}
+
+.tasks-table thead, .tasks-table tbody tr {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.tasks-table thead {
+  width: calc(100% - 1.1em);
+}
+
+.tasks-table thead th {
+  text-align: left;
+}

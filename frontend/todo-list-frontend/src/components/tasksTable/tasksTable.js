@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import axios from 'axios';
 import { fetchContext } from '../../contexts/fetchContext';
+import './tasksTable.css';
 
 function TasksList() {
   const { getTasks, tasks } = useContext(fetchContext);
@@ -14,7 +15,7 @@ function TasksList() {
   };
 
   return (
-    <table>
+    <table className="tasks-table">
       <thead>
         <tr>
           <th>Tarefa</th>

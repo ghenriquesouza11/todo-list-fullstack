@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import axios from 'axios';
 import { fetchContext } from '../../contexts/fetchContext';
+import './tasksForm.css';
 
 function TasksForm() {
   const { getTasks } = useContext(fetchContext);
@@ -15,9 +16,13 @@ function TasksForm() {
     setTask('');
   };
   return (
-    <form onSubmit={ (event) => postTask(event) }>
+    <form
+      className="tasks-form"
+      onSubmit={ (event) => postTask(event) }
+    >
       <label>
         <input
+          className="task-input"
           type="text"
           value={ task }
           onChange={ ({ target }) => setTask(target.value) }
